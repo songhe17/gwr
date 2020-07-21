@@ -24,17 +24,23 @@ k = list(reg_data.keys())
 
 print(k)
     
-reg_keys = ['total_population', 'area_sqmi', 'percent_smokers',
-            'percent_adults_with_obesity', 'food_environment_index', 'percent_physically_inactive',
-            'percent_with_access_to_exercise_opportunities', 'percent_excessive_drinking',
-            'chlamydia_rate', 'mental_health_provider_rate', 'high_school_graduation_rate',
-            'percent_some_college', 'violent_crime_rate', 'average_daily_pm2_5',
-            'overcrowding', 'percent_drive_alone_to_work', 'life_expectancy', 'percent_65_and_over',
-            'percent_below_poverty']
+# =============================================================================
+# reg_keys = ['total_population', 'area_sqmi', 'percent_smokers',
+#             'percent_adults_with_obesity', 'food_environment_index', 'percent_physically_inactive',
+#             'percent_with_access_to_exercise_opportunities', 'percent_excessive_drinking',
+#             'chlamydia_rate', 'mental_health_provider_rate', 'high_school_graduation_rate',
+#             'percent_some_college', 'violent_crime_rate', 'average_daily_pm2_5',
+#             'overcrowding', 'percent_drive_alone_to_work', 'life_expectancy', 'percent_65_and_over',
+#             'percent_below_poverty']
+# =============================================================================
+#TODO
+reg_keys = ['total_population', 'area_sqmi', 'population_density_per_sqmi',
+            'percent_smokers', 'percent_adults_with_obesity',
+            'percent_excessive_drinking', 'percent_uninsured',
+            'percent_unemployed_CHR',
+            'violent_crime_rate','life_expectancy',
+            'percent_65_and_over', 'per_capita_income', 'percent_below_poverty']
 
-reg_keys = ['total_population', 'area_sqmi', 'percent_some_college', 'percent_65_and_over', 
-            'percent_below_poverty','percent_adults_with_obesity','percent_drive_alone_to_work',
-            'percent_excessive_drinking', 'percent_with_access_to_exercise_opportunities']
 
 info_keys = ['date', 'county', 'lat', 'lon', 'area_sqmi']
 # date * county, check who is missing
@@ -118,8 +124,7 @@ for i, (key, value) in enumerate(edited_covid_info.items()):
 # =============================================================================
 with open('data.json', 'w') as f:
     json.dump(save, f)
-with open('../mgwr/data.json', 'w') as f:
-    json.dump(save, f)
+
 #print(save['y'])
 
 #print(available_dc.keys())
